@@ -1,0 +1,32 @@
+<h1>HEROES  <small>Marvel y DC</small> </h1>
+<hr>
+
+
+<div *ngIf="heroes.length==0"class="row">
+
+  <div class="col-md-12">
+    <div class="alert alert-success" role="alert">
+      No existe resultados
+    </div>
+
+  </div>
+
+</div>
+
+<div class="card-columns">
+
+
+<div class="card animated fadeIn fast" style="width: 18rem;" *ngFor="let i of heroes; let j = index">
+  <img class="card-img-top" [src]="i.img" [alt]="i.nombre">
+  <div class="card-body">
+    <h5 class="card-title">{{ i.nombre }}</h5>
+    <p class="card-text">{{ i.bio }}</p>
+    <p class="card-text"><small class="text-muted">{{ i.aparicion }} </small></p>
+    <a [routerLink] = "['/heroe',j]" class="btn btn-primary col">Ver más</a>
+ <!-- <button (click) = "verHeroe(j)"
+    type="button" class="btn btn-primary col" name="button" style="margin-top: 10px">Ver más</button>-->
+  </div>
+</div>
+
+
+</div>
